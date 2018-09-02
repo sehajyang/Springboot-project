@@ -73,14 +73,18 @@ public class UserController {
         } catch (Exception e) {
             model.addAttribute("result","0");
         }
-        return "user/login";
+        return "user/joinresult";
     }
     //중복체크
     @RequestMapping(value = "user/idcheck/{id}",method = RequestMethod.GET)
     private String idcheck(@PathVariable String id,Model model) {
         try {
-            userService.userIdService(id);
+           UserVO uv = userService.userIdService(id);
+           if(uv.getUid() != 0) {
             model.addAttribute("check","이미 있는 아이디입니다");
+           }else {
+            model.addAttribute("check","사용가능합니다");
+           }
         } catch (Exception e) {
             model.addAttribute("check","사용가능합니다");
         }
