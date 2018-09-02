@@ -45,14 +45,17 @@ body {
     <button class="btn btn-primary" id="orderBtn" onclick="location.href='/order/buy/${sessionScope.uid}'">주문하기</button>
 <%@ include file="../bootstrap.jsp" %>
 <script>
+	$(function(){
+	<c:if test="${list[0].cart_num eq null}">
+	$('#orderBtn').css("visibility","hidden");
+	alert('카트가 비어있습니다');
+	return false;
+	</c:if>
+	});
+
 	function myFunction(data) {
 	var data2 = $("#price"+data).val();
 	var data3 = $("#count"+data).val();
-	 <c:if test="${list[0].cart_num eq null}">
-		$('#orderBtn').css("visibility","hidden");
-		alert('카트가 비어있습니다');
-		</c:if>
-	<c:if test="${sessionScope.id ne null}">
 	$.ajax({
 		url: "/order/cartup/${sessionScope.uid}",
 		method: "post",
@@ -66,7 +69,6 @@ body {
 				location.reload();
 		}
    });
-	</c:if>
 }
 </script>
 </body>

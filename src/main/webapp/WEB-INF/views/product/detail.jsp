@@ -10,6 +10,7 @@
 body {
 	padding: 10%;
 }
+
 </style>
 
 </head>
@@ -17,7 +18,7 @@ body {
 <%@ include file="../header.jsp" %>
 <h1>상품상세보기</h1>
 <div>
-<img src="/resources/img/${pinfo.img_name}.jpg" alt="${pinfo.img_name}">
+<img src="/resources/img/${pinfo.img_name}.jpg" alt="${pinfo.img_name}" style="width:200px;height:200px;">
 </div>
 상품번호 :${pinfo.product_id }<p>
 상품명 :${pinfo.product_name}<p>
