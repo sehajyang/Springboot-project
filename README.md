@@ -20,3 +20,17 @@ ETC : RDS, Travis CI
 
 IDE : Eclipse oxyzon, VSCode
 
+### 실행 방법
+
+1. 본 레파지토리를 받습니다
+
+2. 받은 경로로 간 후 터미널 및 CMD 창에 다음과 같이 입력합니다.
+
+```
+mvn package
+```
+3.build가 성공적으로 끝나면 target 디렉터리 아래의 war 파일을 복사 후 톰켓 webapps아래로 이동시켜 줍니다.
+
+4.war 파일 이름을 ROOT.war 로 바꿉니다(중요)
+
+5.톰켓 서버를 실행합니다.
