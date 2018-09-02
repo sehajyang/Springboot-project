@@ -26,7 +26,7 @@ public class OrderController {
     private String loginView() {
         return "order/cart";
     }
-    
+    //카트 뷰
     @RequestMapping(value = "order/cart/{uid}",method = RequestMethod.GET)
     private String cartView(@PathVariable int uid,CartVO cartvo,Model model) {
         try {
@@ -37,7 +37,7 @@ public class OrderController {
         }
         return "order/cart";
     }
-    
+    //카트 데이터 추가
     @RequestMapping(value = "order/cart/{uid}",method = RequestMethod.POST)
     private String cart(@PathVariable int uid,CartVO cartvo) {
         try {
@@ -48,6 +48,7 @@ public class OrderController {
         }
         return "product/detail";
     }
+    //카트 데이터 업데이트(수량 및 가격 수정)
     @RequestMapping(value = "order/cartup/{uid}",method = RequestMethod.POST)
     private String updatecart(@PathVariable int uid,CartVO cartvo) {
         try {
@@ -66,7 +67,7 @@ public class OrderController {
         try {
             model.addAttribute("pinfo",orderService.productDetailService(product_id));
         } catch (Exception e) {
-            System.out.println("pdetailservice 실행안됨");
+            e.printStackTrace();
         }
         return "product/detail";
     }
@@ -83,7 +84,7 @@ public class OrderController {
         
         return "order/buy";
     }
-    
+    //카트 테이블 데이터를 order, orderdetail에 넣는 작업
     @RequestMapping(value = "order/buy/{uid}",method = RequestMethod.POST)
     private String buy(@PathVariable int uid,OrderVO ordervo) {
        try {
@@ -97,8 +98,7 @@ public class OrderController {
         return "order/ordercomplete";
     }
     
-    
-  //주문내역조회
+  //주문 내역 조회
     @RequestMapping(value = "order/{uid}",method = RequestMethod.GET)
     private String signupView(@PathVariable int uid,Model model) {
         try {
@@ -108,6 +108,7 @@ public class OrderController {
         }
         return "order/orderview";
     }
+    //주문 내역 상세 조회
     @RequestMapping(value = "order/detail/{order_id}",method = RequestMethod.GET)
     private String detailView(@PathVariable int order_id,Model model) {
         try {
@@ -117,6 +118,4 @@ public class OrderController {
         }
         return "order/orderdetail";
     }
-    
-
 }

@@ -11,7 +11,6 @@ body {
 	padding: 10%;
 }
 </style>
-
 </head>
 <body>
 <%@ include file="../header.jsp" %>
