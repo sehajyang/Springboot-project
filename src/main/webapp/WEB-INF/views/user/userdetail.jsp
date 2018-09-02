@@ -11,33 +11,16 @@
 <h1>UserView</h1>
 
 <div class="container">
-    <table class="table table-hover">
-        <tr>
-            <th>No</th>
-            <th>아이디</th>
-            <th>비밀번호</th>
-            <th>성별</th>
-            <th>이메일</th>
-            <th>주소1</th>
-            <th>주소2</th>
-            <th>가입일</th>
-            <th>생일</th>
-            <th>전화번호</th>
-        </tr>
-          <tr>
-        	<td>${list.uid}</td> 
-            <td>${list.id}</td>
-            <td>${list.pwd}</td>
-            <td>${list.name}</td>
-            <td>${list.gender}</td>
-            <td>${list.email}</td>
-            <td>${list.address1}</td>
-            <td>${list.address2}</td>
-            <td>${list.join_date}</td>
-            <td>${list.birth_date}</td>
-            <td>${list.tel}</td>
-              </tr>
-    </table>
+		아이디 : ${list.id} <p>
+		비밀번호 : ${list.pwd} <p>
+		이름 :  ${list.name} <p>
+		성별 : ${list.gender} <p>
+		이메일 : ${list.email} <p>
+		주소1 : ${list.address1} <p>
+		주소2 : ${list.address2} <p>
+		가입일 : ${list.join_date} <p>
+		생일 : ${list.birth_date} <p>
+		전화번호 : ${list.tel} <p>
     <button class="btn btn-primary" onclick="location.href='/'">홈으로가기</button>
     <button class="btn btn-primary" onclick="location.href='/user/info/${list.uid}/update'">내정보수정</button>
 	<button class="btn btn-primary" onclick="location.href='/order/${sessionScope.uid}'">주문 내역 보기</button>

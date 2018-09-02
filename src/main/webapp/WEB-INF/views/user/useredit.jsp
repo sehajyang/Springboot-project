@@ -14,34 +14,17 @@
 <!-- form 써야됨 -->
 <form action="/user/info/${list.uid}/update" method="post"><br />
 <div class="container">
-    <table class="table table-hover">
-        <tr>
-            <th>No</th>
-            <th>아이디</th>
-            <th>비밀번호</th>
-            <th>이름</th>
-            <th>성별</th>
-            <th>이메일</th>
-            <th>주소1</th>
-            <th>주소2</th>
-            <th>가입일</th>
-            <th>생일</th>
-            <th>전화번호</th>
-        </tr>
-          <tr>
-        	<td>${list.uid}</td> 
-            <td>${list.id}</td>
-            <td><input type = "text" name = "pwd" value="${list.pwd}"></td>
-            <td>${list.name}</td>
-            <td><input type = "text" name = "gender" value="${list.gender}"></td>
-            <td><input type = "text" name = "email" value="${list.email}"></td>
-            <td><input type = "text" name = "address1" value="${list.address1}"></td>
-            <td><input type = "text" name = "address2" value="${list.address2}"></td>
-            <td>${list.join_date}</td>
-            <td><input type = "text" name = "birth_date" value="${list.birth_date}"></td>
-            <td><input type = "text" name = "tel" value="${list.tel}"></td>
-              </tr>
-    </table>
+		No : ${list.uid} <p>
+		아이디 : ${list.id} <p>
+		비밀번호 :  <input type = "text" name = "pwd" value="${list.pwd}"> <p>
+		이름 :  ${list.name} <p>
+		성별 : <input type = "text" name = "gender" value="${list.gender}"> <p>
+		이메일 :  <input type = "text" name = "email" value="${list.email}"> <p>
+		주소1 : <input type = "text" name = "address1" value="${list.address1}"> <p>
+		주소2 :   <input type = "text" name = "address2" value="${list.address2}"> <p>
+		가입일 :   ${list.join_date} <p>
+		생일 : <input type = "text" name = "birth_date" value="${list.birth_date}"> <p>
+		전화번호 :   <input type = "text" name = "tel" value="${list.tel}"> <p>
 </div>
     <input type="submit" value="수정완료" name="Submit" id="frm1_submit" />
 </form>

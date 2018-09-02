@@ -6,6 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	padding: 10%;
+}
+</style>
+
 </head>
 <body>
 <%@ include file="../header.jsp" %>

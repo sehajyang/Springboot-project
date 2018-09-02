@@ -7,24 +7,28 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	padding : 10%;
+}
+</style>
 </head>
 <body>
 <h1>Join view</h1>
-	ID : <input type = "text" name = "id"><br />
-<!-- 	ajax 사용 -->
-	<button class="btn btn-primary" id="idCheck">중복체크</button>
-	PWD : <input type = "password" name = "pwd"><br />
-	NAME : <input type = "text" name = "name"><br />
-	GENDER : <input type = "text" name = "gender"><br />
-	EMAIL : <input type = "text" name = "email"><br />
-	ADDRESS : <input type = "text" name = "address1"><br />
-	ADDRESS2 : <input type = "text" name = "address2"><br />
-	BIRTH DATE : <input type = "text" name = "birth_date"><br />
-	TEL : <input type = "text" name = "tel" placeholder ="010-0000-0000"><br />
+	ID : <input type = "text" name = "id">
+	<button class="btn btn-primary" id="idCheck">중복체크</button><p>
+	PWD : <input type = "password" name = "pwd"><p>
+	NAME : <input type = "text" name = "name"><p>
+	GENDER : <input type = "text" name = "gender"><p>
+	EMAIL : <input type = "text" name = "email"><p>
+	ADDRESS : <input type = "text" name = "address1"><p>
+	ADDRESS2 : <input type = "text" name = "address2"><p>
+	BIRTH DATE : <input type = "text" name = "birth_date" placeholder ="1990-01-01"><p>
+	TEL : <input type = "text" name = "tel" placeholder ="010-0000-0000"><p>
     <button class="btn btn-primary" id="submitBtn">회원가입</button>
 <%@ include file="../bootstrap.jsp" %>
 <script>
-	
+	//아이디 중복체크 ajax
 	$("#idCheck").click(function(){
 		var data = $('input[name=id]').val();
 		$.ajax({
@@ -35,6 +39,7 @@
 			}
 	   });
 	});
+	//가입양식 제출 ajax
 	$("#submitBtn").click(function(){
 		$.ajax({
 			url: "/user/signup",

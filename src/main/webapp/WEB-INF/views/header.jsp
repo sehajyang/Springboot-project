@@ -11,7 +11,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-<div id="home">
+<div id="home" style = "border:1px solid black">
 <h1>Home</h1>
 </div>
  <c:if test="${sessionScope.id ne null}">

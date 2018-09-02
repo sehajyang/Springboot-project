@@ -6,11 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	padding: 10%;
+}
+</style>
 </head>
 <body>
 <%@ include file="../header.jsp" %>
 	<h1>orderview view</h1>
-	
 
 	<table class="table table-hover">
 		<tr>
@@ -22,7 +26,6 @@
 		</tr>
 		<c:forEach var="list" items="${list}">
 			<tr onclick="location.href='/order/detail/${list.order_id}'">
-				<!-- 이 부분 수정! -->
 				<td>${list.order_id}</td>
 				<td>${list.uid}</td>
 				<td>${list.order_date}</td>

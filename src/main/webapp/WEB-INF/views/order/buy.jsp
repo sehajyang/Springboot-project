@@ -6,6 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+#buybtn {
+	background-color: #ff9933;
+	border-radius: 3px;
+}
+body {
+	padding: 10%;
+}
+</style>
 </head>
 <body>
 <%@ include file="../header.jsp" %>
@@ -47,7 +56,19 @@
 		가격 : <input type = "text" name = "total_price" value="${totalPrice}"readonly><p>
 		<input type="submit" value="구매" name="Submit" id="buybtn" />
 	</form>
-	<button class="btn btn-primary" onclick="history.back()">결제취소</button>
+	<button class="btn .btn-default" onclick="history.back()">결제취소</button>
 	<%@ include file="../bootstrap.jsp" %>
+	<script>
+	$('#buybtn').click(function() {
+		if ($('input[name=order_name]').val() == ""||$('input[name=order_email]').val() == ""||
+			$('input[name=order_tel]').val() == ""||$('input[name=d_name]').val() == ""||
+			$('input[name=d_tel]').val() == ""||$('input[name=d_address1]').val() == ""||
+			$('input[name=d_address2]').val() == "") {
+			alert('필수 항목을 입력해주세요');
+			return false;
+		}
+		
+		});
+	</script>
 </body>
 </html>

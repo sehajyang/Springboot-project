@@ -7,3 +7,7 @@ img {
 #cartview {
 	visibility: hidden;
 }
+
+body {
+	padding : 10%;
+}

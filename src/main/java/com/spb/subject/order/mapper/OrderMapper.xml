@@ -23,7 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
     <select id="orderDetail" parameterType="int" resultType="com.spb.subject.order.domain.OrderDetailVO">
-        select p.img_name, p.product_name, d.order_id, d.product_id, d.count, d.orderdetail_price,o.order_name, o.order_email, o.order_tel, o.d_name, o.d_tel, o.d_address1, o.d_address2
+        select p.img_name, p.product_name, d.order_id, d.product_id, d.count, d.orderdetail_price,o.order_name, 
+        o.order_email, o.order_tel, o.d_name, o.d_tel, o.d_address1, o.d_address2
         from orderdetail d, orders o, product p
         where d.order_id=o.order_id
         and p.product_id = d.product_id
@@ -50,7 +51,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     #{d_name},
     #{d_tel},
     #{d_address1},
-    #{d_address1})
+    #{d_address2})
     </insert>
     
     <insert id="orderDetailInsert" parameterType="int">

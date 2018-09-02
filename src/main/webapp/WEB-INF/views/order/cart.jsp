@@ -6,6 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	padding: 10%;
+}
+</style>
+
 </head>
 <body>
 <%@ include file="../header.jsp" %>
@@ -27,15 +33,14 @@
                   <td>${list.product_name}</td>
                   <td>${list.product_price}</td>
                  <td><img src="/resources/img/${list.img_name}.jpg" alt="${list.img_name}"></td>
-                  
-                  <td><input type ="text" id ="price${list.cart_num}" value="${list.product_price}" style="visibility: hidden"> &nbsp;  
                   <td><input type ="text" id ="count${list.cart_num}" value="${list.count}"> &nbsp;  
                   <button class="btn btn-primary" id="countBtn" onclick="myFunction(${list.cart_num})">수정</button>
+                  <td><input type ="text" id ="price${list.cart_num}" value="${list.product_price}" style="visibility: hidden"> &nbsp;  
                   </td>
              </tr>
           </c:forEach>
     </table>
-    <h3>총 금액 : ${totalPrice}</h3>
+    <h2>총 금액 : ${totalPrice}</h2><p>
 </div>
     <button class="btn btn-primary" id="orderBtn" onclick="location.href='/order/buy/${sessionScope.uid}'">주문하기</button>
 <%@ include file="../bootstrap.jsp" %>
