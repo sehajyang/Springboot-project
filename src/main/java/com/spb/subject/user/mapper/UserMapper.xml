@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+<mapper namespace="com.spb.subject.user.mapper.UserMapper">
+ 
+    <select id="userDetail" parameterType="int" resultType="com.spb.subject.user.domain.UserVO">
+        SELECT
+            *
+        FROM user
+        where uid = #{uid}
+    </select>
+    
+    <select id="userId" parameterType="String" resultType="com.spb.subject.user.domain.UserVO">
+        SELECT
+            *
+        FROM user
+        where id = #{id}
+    </select>
+    
+    <insert id="userInsert" parameterType="com.spb.subject.user.domain.UserVO">
+       insert into user(id, pwd, name, gender, email, address1, address2, join_date, birth_date, tel) 
+       values(#{id},#{pwd},#{name},#{gender},#{email},#{address1},#{address1},now(),#{birth_date},#{tel})
+    </insert>
+    
+    <update id="userUpdate" parameterType="com.spb.subject.user.domain.UserVO">
+        update user set
+        pwd = #{pwd},
+        gender = #{gender},
+        email = #{email},
+        address1 = #{address1},
+        address2 = #{address1},
+        birth_date = #{birth_date},
+        tel = #{tel}
+        where uid = #{uid}
+    </update>
+    
+    <update id="userDelUpdate" parameterType="com.spb.subject.user.domain.UserVO">
+        update user set
+         pwd = '0000'
+         where uid = 1
+    </update>
+    
+</mapper>
+
+ 
