@@ -24,7 +24,6 @@ public class UserController {
     //로그인 뷰
     @RequestMapping(value = "user/login",method = RequestMethod.GET)
     private String loginView() {
-        System.out.println("get");
         return "user/login";
     }
     //로그인 처리
@@ -60,13 +59,11 @@ public class UserController {
     //회원가입 뷰
     @RequestMapping(value = "user/signup",method = RequestMethod.GET)
     private String signupView() {
-        System.out.println("get");
         return "user/join";
     }
     //회원가입 처리
     @RequestMapping(value = "user/signup",method = RequestMethod.POST)
     private String signup(@ModelAttribute UserVO bean,Model model) {
-        System.out.println("post");
         try {
             //가입 된 경우
             userService.userInsertService(bean);
@@ -122,7 +119,6 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(bean);
         return "redirect:/user/info/"+uid;
     }
 
