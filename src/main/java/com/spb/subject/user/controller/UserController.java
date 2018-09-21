@@ -101,7 +101,7 @@ public class UserController {
         return "user/userdetail";
     }
     //수정 뷰
-    @RequestMapping(value = "user/info/{uid}/update",method = RequestMethod.GET)
+    @RequestMapping(value = "user/info/{uid}",method = RequestMethod.PUT)
     private String userinfoUpdateView(@PathVariable int uid,Model model) {
         try {
             model.addAttribute("list",userService.userDetailService(uid));
@@ -111,7 +111,7 @@ public class UserController {
         return "user/useredit";
     }
     //수정 처리
-    @RequestMapping(value = "user/info/{uid}/update",method = RequestMethod.POST)
+    @RequestMapping(value = "user/info/{uid}",method = RequestMethod.POST)
     private String userinfoUpdate(@PathVariable int uid,@ModelAttribute UserVO bean) {
         bean.setUid(uid);
         try {
