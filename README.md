@@ -29,8 +29,8 @@ IDE : Eclipse oxyzon, VSCode
 ```
 mvn package
 ```
-3.build가 성공적으로 끝나면 target 디렉터리 아래의 war 파일을 복사 후 톰켓 webapps아래로 이동시켜 줍니다.
+3. build가 성공적으로 끝나면 target 디렉터리 아래의 war 파일을 복사 후 톰켓 webapps아래로 이동시켜 줍니다.
 
-4.war 파일 이름을 ROOT.war 로 바꿉니다(중요)
+4. war 파일 이름을 ROOT.war 로 바꿉니다(중요)
 
-5.톰켓 서버를 실행합니다.
+5. 톰켓 서버를 실행합니다.
